@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var ramadanDays = [
     { day: 1, date: "13 february 2024", fajr: "4:43 صباحاً ",AlShorouk: "6:00 صباحاً ", dhuhr: "12:30 مساءً", asr: "4:00 مساءً", maghrib: "6:30 مساءً", isha: "8:00 مساءً" },
-    { day: 2, date: "12 March 2024", fajr: "4:42 صباحاً ",AlShorouk: "6:00 صباحاً ", dhuhr: "12:30 مساءً", asr: "4:00 مساءً", maghrib: "6:30 مساءً", isha: "8:00 مساءً" },
+    { day: 2, date: "15 february 2024", fajr: "4:42 صباحاً ",AlShorouk: "6:00 صباحاً ", dhuhr: "12:30 مساءً", asr: "4:00 مساءً", maghrib: "6:30 مساءً", isha: "8:00 مساءً" },
     { day: 3, date: "13 March 2024", fajr: "4:41 صباحاً ",AlShorouk: "6:00 صباحاً ", dhuhr: "12:30 مساءً", asr: "4:00 مساءً", maghrib: "6:30 مساءً", isha: "8:00 مساءً" },
     { day: 4, date: "14 March 2024", fajr: "4:40 صباحاً ",AlShorouk: "6:00 صباحاً ", dhuhr: "12:30 مساءً", asr: "4:00 مساءً", maghrib: "6:30 مساءً", isha: "8:00 مساءً" },
     { day: 5, date: "15 March 2024", fajr: "4:39 صباحاً ",AlShorouk: "6:00 صباحاً ", dhuhr: "12:30 مساءً", asr: "4:00 مساءً", maghrib: "6:30 مساءً", isha: "8:00 مساءً" },
@@ -52,6 +52,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (dayMonth === currentMonth && dayNumber === currentDay) {
       dayElement.classList.add("current-day");
+    } else if (dayDate < currentDate) {
+      // إذا كان اليوم أمس
+      dayElement.classList.add("past-day");
+    } else {
+      // إذا كان اليوم غداً
+      dayElement.classList.add("future-day");
     }
 
     dayElement.addEventListener("click", function () {
