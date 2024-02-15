@@ -27,7 +27,7 @@ footer {
 }
 
 h1 {
-  color: #fff;
+  color: #ffffff;
   margin-top: 30px;
 }
 
@@ -47,28 +47,40 @@ h1 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.418);
+  background-color: rgba(255, 254, 254, 0.418);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .day:hover {
-  background-color: rgba(255, 217, 0, 0.817);
+  background-color: rgba(207, 111, 9, 0.615);
   transform: scale(1.05);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 0px 15px rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1), 0px 0px 15px rgba(255, 255, 255, 1);
 }
 
 .day-text {
   font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
+}
+
+/* تمييز الأيام الماضية */
+.past-day {
+  background-color: rgba(136, 0, 0, 0.5); /* أو أي لون تفضله للأيام الماضية */
+  color: #fff; /* لتحسين قراءة النص */
+}
+
+/* تمييز الأيام القادمة */
+.future-day {
+  background-color: rgba(0, 130, 0, 0.715); /* أو أي لون تفضله للأيام القادمة */
+  color: #ffffff; /* لتحسين قراءة النص */
 }
 
 #prayerTimes {
   margin-top: 20px;
   padding: 20px;
-  background-color:rgba(150, 86, 53, 0.296); /* لون خلفية مربع أوقات الصلاة مع شفافية */
+  background-color:rgba(243, 94, 20, 0.296); /* لون خلفية مربع أوقات الصلاة مع شفافية */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   color: #fff; /* لون النص في مربع أوقات الصلاة */
 }
