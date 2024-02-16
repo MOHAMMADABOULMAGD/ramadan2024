@@ -21,9 +21,9 @@ header {
 footer {
   padding: 15px;
   color: #fff;
-  position: solid;
+  position: fixed;
   bottom: 0;
-  width: 100px;
+  width: 100%;
 }
 
 h1 {
@@ -101,91 +101,23 @@ h1 {
   margin-top: 80px;
 }
 
-.prayer-table th, .prayer-table td {
+.prayer-table th{
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.prayer-table td,
+.prayer-table th {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: center;
 }
 
-.prayer-table th {
-  background-color: rgba(2, 98, 105, 0.58); /* لون خلفية عنوان الجدول مع شفافية */
-  color: white;
+.prayer-table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
-footer {
-  --c-body-1: var(--c-offwhite, #efece0);
-  --c-body-2: #9f9d98;
-  --c-body--off: #777671;
-  --c-black: #1a1a1a;
-  --c-gray-1: #202020;
-  --c-gray-2: #313131;
-  --c-gray-3: #393939;
-  --c-gray-4: #494945;
-  --c-offwhite: #efece0;
-  --c-red: #ff7032;
-  --c-dark-gray: #1f1f1fff;
-  --c-bg: #1a1a1a;
-  --c-stroke-gray: #403f36ff;
-  --c-offwhite-accent: #b8b7adff;
-  --c-button-floating-bg: #262626ff;
-  --c-button-hovering: #383838ff;
-  --c-action: #ec543f;
-  --c-action-translucent: #ec543f33;
-  --c-danger: #e94444;
-  --c-green: #9bc880;
-  --c-green-active: #07f21e;
-  --c-links: #8c8cff;
-  --r-none: 0;
-  --r-2xl: 4px;
-  --r-3xl: 5px;
-  --r-4xl: 8px;
-  --r-5xl: 12px;
-  --r-6xl: 14px;
-  --r-7xl: 24px;
-  --r-8xl: 32px;
-  --s-05: 4px;
-  --s-1: 8px;
-  --s-2: 12px;
-  --s-3: 16px;
-  --s-4: 20px;
-  --s-5: 24px;
-  --s-6: 28px;
-  --s-7: 32px;
-  --z-1: 10;
-  --z-2: 20;
-  --z-3: 30;
-  --z-4: 40;
-  --z-5: 50;
-  --z-6: 60;
-  --z-7: 70;
-  --z-8: 80;
-  --z-9: 90;
-  --f-size-1: 1.4rem;
-  --f-size-2: 1.6rem;
-  --f-size-3: 1.8rem;
-  --f-size-4: 2rem;
-  --f-size-5: 2.4rem;
-  --f-size-7: 3.2rem;
-  --f-size-9: 6.4rem;
-  --f-primary: Rubik, system-ui, Helvetica, Arial, sans-serif;
-  --f-title: "29LT Ada Flat", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --w-text-content: 600px;
-  
-  font-weight: 400;
-  direction: rtl;
-  color-scheme: light dark;
-  color: var(--c-offwhite);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--f-primary);
-  font-size: var(--f-size-2);
-  margin-bottom: var(--s-4);
-  padding-inline: var(--s-2);
-  line-height: 1.6;
+.prayer-table tr:hover {
+  background-color: #ddd;
 }
