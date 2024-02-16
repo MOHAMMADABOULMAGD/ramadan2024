@@ -1,7 +1,7 @@
 body {
   text-align: center;
   background: url(https://i.postimg.cc/15jsHTmf/166702.jpg) center/cover no-repeat;
-  font-family: "Arial", sans-serif;
+  font-family: "transparent", sans-serif;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -27,15 +27,19 @@ footer {
 }
 
 h1 {
-  color: #ffffff;
+  font-size: 70px;
   margin-top: 30px;
+  color: transparent; /* اختر لونًا مناسبًا للحواف */
+  -webkit-text-stroke: 3px #ffffff; /* حواف خارجية للمتصفحات القائمة على Webkit مثل Chrome و Safari */
+  font-weight: bold; /* قد تحتاج لتعديل وزن الخط حسب الخط المستخدم */
 }
 
 #calendar {
+  flex-direction: row-reverse;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .day {
@@ -54,7 +58,7 @@ h1 {
 }
 
 .day:hover {
-  background-color: rgba(207, 111, 9, 0.615);
+  background-color: rgb(179, 95, 7);
   transform: scale(1.05);
   box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1), 0px 0px 15px rgba(255, 255, 255, 1);
 }
@@ -67,26 +71,26 @@ h1 {
 
 /* تمييز الأيام الماضية */
 .past-day {
-  background-color: rgba(136, 0, 0, 0.5); /* أو أي لون تفضله للأيام الماضية */
+  background-color: rgba(165, 6, 6, 0.6); /* أو أي لون تفضله للأيام الماضية */
   color: #fff; /* لتحسين قراءة النص */
 }
 
 /* تمييز الأيام القادمة */
 .future-day {
-  background-color: rgba(0, 130, 0, 0.715); /* أو أي لون تفضله للأيام القادمة */
+  background-color: rgba(2, 170, 2, 0.748); /* أو أي لون تفضله للأيام القادمة */
   color: #ffffff; /* لتحسين قراءة النص */
 }
 
 #prayerTimes {
   margin-top: 20px;
   padding: 20px;
-  background-color:rgba(243, 94, 20, 0.296); /* لون خلفية مربع أوقات الصلاة مع شفافية */
+  background-color:rgba(187, 103, 13, 0.239); /* لون خلفية مربع أوقات الصلاة مع شفافية */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   color: #fff; /* لون النص في مربع أوقات الصلاة */
 }
 
 .current-day {
-  background-color:rgba(220, 157, 61, 0.94); /* لون الخلفية لليوم الحالي مع شفافية */
+  background-color:rgba(220, 156, 61, 0.628); /* لون الخلفية لليوم الحالي مع شفافية */
   transform: scale(1.05);
 }
 
@@ -104,6 +108,6 @@ h1 {
 }
 
 .prayer-table th {
-  background-color: rgba(78, 129, 133, 0.562); /* لون خلفية عنوان الجدول مع شفافية */
+  background-color: rgba(2, 98, 105, 0.58); /* لون خلفية عنوان الجدول مع شفافية */
   color: white;
 }
