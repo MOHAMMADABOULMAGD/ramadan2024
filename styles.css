@@ -90,7 +90,7 @@ h1 {
 }
 
 .current-day {
-  background-color:rgba(220, 156, 61, 0.628); /* لون الخلفية لليوم الحالي مع شفافية */
+  background-color:rgba(220, 156, 61, 0.9); /* لون الخلفية لليوم الحالي مع شفافية */
   transform: scale(1.05);
 }
 
