@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var days = document.getElementById("calendar");
   var prayerTable = document.getElementById("prayerTimes");
+  var additionalInfoDiv = document.getElementById("additionalInfo");
   var notifications = []; // قائمة لتخزين الإشعارات
 
   var ramadanDays = [
@@ -63,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dayElement.addEventListener("click", function () {
       displayPrayerTimes(ramadanDay);
+      displayAdditionalInfo(ramadanDay);
     });
 
     var dayName = dayDate.toLocaleDateString('ar-EG', { weekday: 'long' });
@@ -87,4 +89,64 @@ document.addEventListener("DOMContentLoaded", function () {
     prayerTable.innerHTML = prayerTableHTML;
   }
 
+  function displayAdditionalInfo(day) {
+  var additionalInfoHTML = "<tr><th colspan='2'>معلومات إضافية</th></tr>";
+  additionalInfoHTML += "<tr><td>اليوم</td><td>" + getArabicNumber(day.day) + " رمضان" + "</td></tr>";
+  additionalInfoHTML += "<tr><td>التاريخ</td><td>" + formatDate(day.date) + "</td></tr>";
+
+    // حساب الأيام المتبقية حتى عيد الفطر
+    var daysUntilEidAlFitr = Math.ceil((new Date("April 9, 2024") - new Date(day.date)) / (1000 * 60 * 60 * 24));
+    additionalInfoHTML += "<tr><td>الأيام المتبقية حتى عيد الفطر</td><td>" + formatNumberInArabic(daysUntilEidAlFitr) + " يوم</td></tr>";
+
+
+  // حساب الأيام المتبقية حتى العيد الكبير
+    var daysUntilEid = Math.ceil((new Date("June 16, 2024") - new Date(day.date)) / (1000 * 60 * 60 * 24));
+    additionalInfoHTML += "<tr><td>الأيام المتبقية حتى عيد الاضحي</td><td>" + formatNumberInArabic(daysUntilEid) + " يوم</td></tr>";
+
+
+  additionalInfoTable.innerHTML = additionalInfoHTML;
+}
+
+function getArabicNumber(number) {
+  var arabicNumbers = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+  return arabicNumbers[number];
+}
+
+function formatDate(date) {
+  var options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(date).toLocaleDateString('ar-EG', options);
+}
+  
+  // دالة لتنسيق الرقم باللغة العربية
+  function formatNumberInArabic(number) {
+    return new Intl.NumberFormat('ar-EG').format(number);
+  }
+
+  // دالة للحصول على رقم اليوم بالعربية
+  function getArabicDayNumber(date) {
+    return date.toLocaleDateString('ar-EG', { weekday: 'numeric' });
+  }
+  
+    // دالة للحصول على معلومات اليوم الحالي
+  function getCurrentDay() {
+    // قم بتحديث هذه الدالة حسب احتياجات التطبيق الخاصة بك
+    // يمكنك استخدام مكتبات خارجية أو API للحصول على اليوم الحالي
+    // في هذا المثال، يتم استخدام الوقت الحالي كوقت لليوم
+    var currentDate = new Date();
+    return {
+      day: currentDate.getDate(),
+      date: currentDate.toDateString()
+    };
+  }
+  // عرض معلومات اليوم الحالي عند تحميل الصفحة
+  var currentRamadanDay = ramadanDays.find(function (ramadanDay) {
+    var dayDate = new Date(ramadanDay.date);
+    var dayMonth = dayDate.getMonth() + 1;
+    var dayNumber = dayDate.getDate();
+
+    return dayMonth === currentMonth && dayNumber === currentDay;
+  });
+
+  displayPrayerTimes(currentRamadanDay);
+  displayAdditionalInfo(currentRamadanDay);
 });
