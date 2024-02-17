@@ -147,3 +147,6 @@ h1 {
   background-color: rgba(2, 98, 105, 0.58);
   color: #fff;
 }
+.additional-info-table tr:hover {
+  background-color: #ffffff43;
+}
