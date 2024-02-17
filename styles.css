@@ -127,3 +127,23 @@ h1 {
 .prayer-table tr:hover {
   background-color: #ffffff43;
 }
+
+.additional-info-table {
+  width: 50%;
+  margin: auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color:#fff
+}
+
+.additional-info-table th, .additional-info-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  background-color:rgba(150, 86, 53, 0.296); /* لون خلفية مربع أوقات الصلاة مع شفافية */
+}
+
+.additional-info-table th {
+  background-color: rgba(2, 98, 105, 0.58);
+  color: #fff;
+}
