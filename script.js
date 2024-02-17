@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function displayPrayerTimes(day) {
-    var prayerTableHTML = "<tr><th>الوقت</th><th>الصلاة</th></tr>";
+    var prayerTableHTML = "<tr><th>الوقت</th><th>الاسم</th></tr>";
     prayerTableHTML += "<tr><td>" + day.Suhoor + "</td><td>السحور</td></tr>";
     prayerTableHTML += "<tr><td>" + day.emsak + "</td><td>الإمساك</td></tr>";
     prayerTableHTML += "<tr><td>" + day.fajr + "</td><td>الفجر</td></tr>";
