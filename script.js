@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 function getArabicNumber(number) {
-  var arabicNumbers = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+  var arabicNumbers = [""];
   return arabicNumbers[number];
 }
 
