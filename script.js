@@ -85,48 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
     prayerTableHTML += "<tr><td>" + day.maghrib + "</td><td>المغرب</td></tr>";
     prayerTableHTML += "<tr><td>" + day.isha + "</td><td>العشاء</td></tr>";
     prayerTable.innerHTML = prayerTableHTML;
-        
-    // حذف الإشعارات السابقة
-    notifications.forEach(function (notification) {
-      clearTimeout(notification);
-    });
-    notifications = [];
-
-    // تنبيه قبل الأذان بـ 15 دقيقة وتنبيه في وقت الصلاة
-    setPrayerNotification("تنبيه: باقي 15 دقيقة على الفجر!", day.date, day.fajr, -15);
-    setPrayerNotification("تنبيه: حان وقت الفجر!", day.date, day.fajr, 0);
-
-    setPrayerNotification("تنبيه: باقي 15 دقيقة على الظهر!", day.date, day.dhuhr, -15);
-    setPrayerNotification("تنبيه: حان وقت الظهر!", day.date, day.dhuhr, 0);
-
-    setPrayerNotification("تنبيه: باقي 15 دقيقة على العصر!", day.date, day.asr, -15);
-    setPrayerNotification("تنبيه: حان وقت العصر!", day.date, day.asr, 0);
-
-    setPrayerNotification("تنبيه: باقي 15 دقيقة على المغرب!", day.date, day.maghrib, -15);
-    setPrayerNotification("تنبيه: حان وقت المغرب!", day.date, day.maghrib, 0);
-
-    setPrayerNotification("تنبيه: باقي 15 دقيقة على العشاء!", day.date, day.isha, -15);
-    setPrayerNotification("تنبيه: حان وقت العشاء!", day.date, day.isha, 0);
-  }
-
-  // تعيين تنبيه للصلاة
-  function setPrayerNotification(message, prayerDate, prayerTime, offsetMinutes) {
-    var prayerDateTime = new Date(prayerDate + " " + prayerTime);
-    var notificationTime = new Date(prayerDateTime.getTime() + offsetMinutes * 60000);
-
-    var notification = setTimeout(function () {
-      if (Notification.permission === "granted") {
-        var notification = new Notification(message);
-      } else if (Notification.permission !== "denied") {
-        Notification.requestPermission().then(function (permission) {
-          if (permission === "granted") {
-            var notification = new Notification(message);
-          }
-        });
-      }
-    }, notificationTime - Date.now());
-
-    notifications.push(notification); // إضافة الإشعار للقائمة
   }
 
 });
