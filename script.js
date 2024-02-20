@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
   additionalInfoHTML += "<tr><td>التاريخ</td><td>" + formatDate(day.date) + "</td></tr>";
 
     // حساب الأيام المتبقية حتى عيد الفطر
-    var daysUntilEidAlFitr = Math.ceil((new Date("April 9, 2024") - new Date(day.date)) / (1000 * 60 * 60 * 24));
-    additionalInfoHTML += "<tr><td>الأيام المتبقية حتى عيد الفطر</td><td>" + formatNumberInArabic(daysUntilEidAlFitr) + " يوم</td></tr>";
+  var daysUntilEidAlFitr = Math.ceil((new Date("April 9, 2024") - new Date(day.date)) / (1000 * 60 * 60 * 24));
+  additionalInfoHTML += "<tr><td>الأيام المتبقية حتى عيد الفطر</td><td>" + (daysUntilEidAlFitr > 0 ? formatNumberInArabic(daysUntilEidAlFitr) + " يوم" : "غداً العيد") + "</td></tr>";
 
 
   // حساب الأيام المتبقية حتى العيد الكبير
