@@ -1,4 +1,4 @@
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
       if (localStorage.getItem('visited_before')) {
         // المستخدم قد قام بزيارة الموقع من قبل
       } else {
