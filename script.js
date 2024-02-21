@@ -165,17 +165,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         alert('Hello👋! Thank you for visiting❤️. This website provides information about Ramadan fasting, prayer times, and additional details. You can click on any day to view the prayer times and additional information for that day.');
 
-
-
-
 ');
-
-        
-
+       
         // قم بتعيين علامة تشير إلى أن المستخدم قد قام بزيارة الموقع
 
-        localStorage.setItem('visited_before', true);
+localStorage.setItem('visited_before', true);
 
-    }
+}
 
 });
