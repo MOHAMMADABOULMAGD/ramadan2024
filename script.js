@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+3document.addEventListener("DOMContentLoaded", function () {
   var days = document.getElementById("calendar");
   var prayerTable = document.getElementById("prayerTimes");
   var additionalInfoDiv = document.getElementById("additionalInfo");
@@ -149,4 +149,17 @@ function formatDate(date) {
 
   displayPrayerTimes(currentRamadanDay);
   displayAdditionalInfo(currentRamadanDay);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('visited_before')) {
+        // المستخدم قد قام بزيارة الموقع من قبل
+    } else {
+        // المستخدم يزور الموقع لأول مرة
+        alert('مرحبًا! شكرًا لزيارتك للمرة الأولى.');
+        
+        // قم بتعيين علامة تشير إلى أن المستخدم قد قام بزيارة الموقع
+        localStorage.setItem('visited_before', true);
+    }
 });
