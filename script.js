@@ -161,9 +161,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // المستخدم يزور الموقع لأول مرة
 
-alert('مرحبًا👋! شكرًا لزيارتك❤️. يقدم هذا الموقع معلومات حول إمساكيات شهر رمضان، وأوقات الصلاة ومعلومات إضافية. يمكنك النقر على أي يوم لعرض أوقات الصلاة والمعلومات الإضافية لتلك اليوم.');
+        alert('مرحبًا👋! شكرًا لزيارتك❤️. يقدم هذا الموقع معلومات حول إمساكيات شهر رمضان، وأوقات الصلاة ومعلومات إضافية. يمكنك النقر على أي يوم لعرض أوقات الصلاة والمعلومات الإضافية لتلك اليوم.');
 
-alert('Hello👋! Thank you for visiting❤️. This website provides information about Ramadan fasting, prayer times, and additional details. You can click on any day to view the prayer times and additional information for that day.');
+        alert('Hello👋! Thank you for visiting❤️. This website provides information about Ramadan fasting, prayer times, and additional details. You can click on any day to view the prayer times and additional information for that day.');
 
 
 
