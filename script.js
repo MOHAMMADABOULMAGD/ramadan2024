@@ -1,7 +1,7 @@
     document.addEventListener("DOMContentLoaded", function () {
       if (localStorage.getItem('visited_before')) {
         // المستخدم قد قام بزيارة الموقع من قبل
-        alert('مرحبًا👋!Hello👋!');
+        alert('مرحبًا👋!   Hello👋!');
           
       } else {
         // المستخدم يزور الموقع لأول مرة
