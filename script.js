@@ -99,18 +99,16 @@ alert('مرحبًا👋!\n\nيقدم هذا الموقع معلومات حول �
 
   function displayAdditionalInfo(day) {
   var additionalInfoHTML = "<tr><th colspan='2'>معلومات إضافية</th></tr>";
-  additionalInfoHTML += "<tr><td>اليوم</td><td>" + getArabicNumber(day.day) + " رمضان" + "</td></tr>";
-  additionalInfoHTML += "<tr><td>التاريخ</td><td>" + formatDate(day.date) + "</td></tr>";
+  additionalInfoHTML += "<tr><td>" + getArabicNumber(day.day) + " رمضان" + "</td><td>اليوم</td></tr>";
+  additionalInfoHTML += "<tr><td>" + formatDate(day.date) + "</td><td>التاريخ</td></tr>";
 
-    // حساب الأيام المتبقية حتى عيد الفطر
+  // حساب الأيام المتبقية حتى عيد الفطر
   var daysUntilEidAlFitr = Math.ceil((new Date("April 9, 2024") - new Date(day.date)) / (1000 * 60 * 60 * 24));
-  additionalInfoHTML += "<tr><td>الأيام المتبقية حتى عيد الفطر</td><td>" + (daysUntilEidAlFitr > 0 ? formatNumberInArabic(daysUntilEidAlFitr) + " يوم" : "غداً العيد") + "</td></tr>";
-
+  additionalInfoHTML += "<tr><td>" + (daysUntilEidAlFitr > 0 ? formatNumberInArabic(daysUntilEidAlFitr) + " يوم" : "غداً العيد") + "</td><td>الأيام المتبقية حتى عيد الفطر</td></tr>";
 
   // حساب الأيام المتبقية حتى العيد الكبير
-    var daysUntilEid = Math.ceil((new Date("June 16, 2024") - new Date(day.date)) / (1000 * 60 * 60 * 24));
-    additionalInfoHTML += "<tr><td>الأيام المتبقية حتى عيد الاضحي</td><td>" + formatNumberInArabic(daysUntilEid) + " يوم</td></tr>";
-
+  var daysUntilEid = Math.ceil((new Date("June 16, 2024") - new Date(day.date)) / (1000 * 60 * 60 * 24));
+  additionalInfoHTML += "<tr><td>" + formatNumberInArabic(daysUntilEid) + " يوم</td><td>الأيام المتبقية حتى عيد الاضحي</td></tr>";
 
   additionalInfoTable.innerHTML = additionalInfoHTML;
 }
