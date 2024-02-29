@@ -33,6 +33,7 @@ h1 {
   font-size: 50px;
   margin-top: -10px;
   font-weight: bold; /* قد تحتاج لتعديل وزن الخط حسب الخط المستخدم */
+  text-shadow: 2px 2px 4px rgba(50, 50, 50, 50); /* قيم تظليل النص */
 }
 
 #calendar {
