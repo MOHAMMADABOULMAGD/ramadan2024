@@ -1,7 +1,10 @@
 body {
   text-align: center;
   background: url(https://i.postimg.cc/15jsHTmf/166702.jpg) center/cover no-repeat;
-  font-family: "transparent", sans-serif;
+  font-family: "Kufam", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -29,8 +32,6 @@ footer {
 h1 {
   font-size: 50px;
   margin-top: -10px;
-  color: transparent; /* اختر لونًا مناسبًا للحواف */
-  -webkit-text-stroke: 2px #ffffff; /* حواف خارجية للمتصفحات القائمة على Webkit مثل Chrome و Safari */
   font-weight: bold; /* قد تحتاج لتعديل وزن الخط حسب الخط المستخدم */
 }
 
