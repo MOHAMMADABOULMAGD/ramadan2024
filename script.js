@@ -111,6 +111,11 @@ alert('مرحبًا👋!\n\nيقدم هذا الموقع معلومات حول �
   additionalInfoHTML += "<tr><td>" + formatNumberInArabic(daysUntilEid) + " يوم</td><td>الأيام المتبقية حتى عيد الاضحي</td></tr>";
 
   additionalInfoTable.innerHTML = additionalInfoHTML;
+
+      // إذا كان اليوم هو اليوم الحالي، قم بالتمرير لأسفل الصفحة
+    if (day.day === getCurrentDay().day) {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
 }
 
 function getArabicNumber(number) {
@@ -144,15 +149,22 @@ function formatDate(date) {
       date: currentDate.toDateString()
     };
   }
-  // عرض معلومات اليوم الحالي عند تحميل الصفحة
-  var currentRamadanDay = ramadanDays.find(function (ramadanDay) {
-    var dayDate = new Date(ramadanDay.date);
-    var dayMonth = dayDate.getMonth() + 1;
-    var dayNumber = dayDate.getDate();
+    // عرض معلومات اليوم الحالي عند تحميل الصفحة
+    var currentRamadanDay = ramadanDays.find(function (ramadanDay) {
+        var dayDate = new Date(ramadanDay.date);
+        var dayMonth = dayDate.getMonth() + 1;
+        var dayNumber = dayDate.getDate();
 
-    return dayMonth === currentMonth && dayNumber === currentDay;
-  });
+        return dayMonth === currentMonth && dayNumber === currentDay;
+    });
 
-  displayPrayerTimes(currentRamadanDay);
-  displayAdditionalInfo(currentRamadanDay);
+    displayPrayerTimes(currentRamadanDay);
+    displayAdditionalInfo(currentRamadanDay);
+
+    // التمرير التلقائي بعد 2 ثانية إذا كان اليوم الحالي هو اليوم المختار
+    if (currentRamadanDay.day === getCurrentDay().day) {
+        setTimeout(function () {
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 2000); // 2000 مللي ثانية (2 ثانية)
+    }
 });
