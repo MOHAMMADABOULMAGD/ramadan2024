@@ -111,11 +111,6 @@ alert('مرحبًا👋!\n\nيقدم هذا الموقع معلومات حول �
   additionalInfoHTML += "<tr><td>" + formatNumberInArabic(daysUntilEid) + " يوم</td><td>الأيام المتبقية حتى عيد الاضحي</td></tr>";
 
   additionalInfoTable.innerHTML = additionalInfoHTML;
-
-      // إذا كان اليوم هو اليوم الحالي، قم بالتمرير لأسفل الصفحة
-    if (day.day === getCurrentDay().day) {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
 }
 
 function getArabicNumber(number) {
